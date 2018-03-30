@@ -18,14 +18,11 @@
     NSMutableArray *tempArr = [NSMutableArray arrayWithArray:dataArr];
     for (int i = 0; i<[tempArr count]; i++)
     {
-        for (int j=i+1; j<[tempArr count]; j++)
+        for (int j=0; j<[tempArr count]-1; j++)
         {
-            int a = [[tempArr objectAtIndex:i] intValue];
-            int b = [[tempArr objectAtIndex:j] intValue];
-            if (a > b)
+            if ([tempArr[j]intValue] > [tempArr[j+1]intValue])
             {
-                [tempArr replaceObjectAtIndex:i withObject:[NSString stringWithFormat:@"%d",b]];
-                [tempArr replaceObjectAtIndex:j withObject:[NSString stringWithFormat:@"%d",a]];
+                [tempArr exchangeObjectAtIndex:j withObjectAtIndex:j+1];
             }
         }
     }
@@ -40,7 +37,7 @@
 
 //选择法
 /*
- 选择法循环过程与冒泡法致，它还定义了记号k=i,然后依次把a[k]同后元素比较，若a[k]>a[j],则使k=j.最后看看k=i是否还成，不成 则交 换a[k],a[i],这样就 冒泡法省下许多的交换，提高了效率。
+ 选择法循环过程与冒泡法致，它还定义了记号k=i,然后依次把a[k]同后元素比较，若a[k]>a[j],则使k=j.最后看看k=i是否还成，不成 则交 换a[k],a[i],这样就 冒泡法省下许多的交换，提高了效率。(筛选最小的放在每次递进的最前面)
  */
 + (NSArray *)rankArithmeticForChooseWithArr:(NSArray *)dataArr{
     static int k;
@@ -48,7 +45,7 @@
     for (int i = 0; i<dataArr.count-1; i++) {
         k = i;
         for (int j = i+1; j<dataArr.count; j++) {
-            if ([tempArr[i]intValue]>[tempArr[j]intValue]) {
+            if ([tempArr[k]intValue]>[tempArr[j]intValue]) {
                 k = j;
             }
         }

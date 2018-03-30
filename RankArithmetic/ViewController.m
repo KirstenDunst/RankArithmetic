@@ -22,12 +22,13 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     
-    NSArray *arr = @[@"34",@"12",@"78",@"5",@"99",@"100",@"55",@"11",@"21",@"78"].copy;
+    NSArray *arr = @[@"9",@"4",@"3",@"5",@"6",@"1",@"8",@"7",@"2"].copy;
     
     //排序方法
     
-    NSLog(@"%@",[ArithmeticModel rankArithmeticForFastWithArr:arr]);
-    
+//    NSLog(@"%@",[ArithmeticModel rankArithmeticForFastWithArr:arr]);
+    NSLog(@"%@",[ArithmeticModel rankArithmeticForChooseWithArr:arr]);
+    NSLog(@"%@",[ArithmeticModel rankArithmeticForBubbleWithArr:arr]);
     
 }
 
