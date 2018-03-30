@@ -50,10 +50,10 @@
         for (int j = i+1; j<dataArr.count; j++) {
             if ([tempArr[i]intValue]>[tempArr[j]intValue]) {
                 k = j;
-                if (i != k) {
-                    [tempArr exchangeObjectAtIndex:i withObjectAtIndex:k];
-                }
             }
+        }
+        if (i != k) {
+            [tempArr exchangeObjectAtIndex:i withObjectAtIndex:k];
         }
     }
     return tempArr;
